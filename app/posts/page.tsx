@@ -18,6 +18,7 @@ import {
 import Link from 'next/link';
 import { useSearchParams, useRouter } from 'next/navigation';
 import { CalendarToday, AccessTime } from '@mui/icons-material';
+import React, { Suspense } from 'react';
 
 const POSTS_PER_PAGE = 10;
 
@@ -91,7 +92,7 @@ function PostListItem({ post }: { post: any }) {
   );
 }
 
-export default function PostsPage() {
+const PostsPageContent = () => {
   const searchParams = useSearchParams();
   const router = useRouter();
 
@@ -136,5 +137,13 @@ export default function PostsPage() {
         )}
       </Stack>
     </Container>
+  );
+};
+
+export default function PostsPage() {
+  return (
+    <Suspense fallback={<CircularProgress sx={{ display: 'block', mx: 'auto' }} />}>
+      <PostsPageContent />
+    </Suspense>
   );
 }
