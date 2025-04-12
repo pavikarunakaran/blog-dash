@@ -16,6 +16,5 @@ export const handlers = [
         }
       ])
     );
-  }),
-  // Add other handlers as needed...
+  })
 ];
