@@ -1,7 +1,5 @@
 # Bloggle - A Blog Dashboard
 
-![Bloggle Screenshot](./public/screenshot.png)
-
 ## Table of Contents
 - [Features]
 - [Technologies]
