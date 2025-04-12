@@ -26,15 +26,14 @@ export const postsApi = createApi({
         transformResponse: (response: Post[], meta) => ({
             posts: response.map(post => ({
                 ...post,
-                // Add random dates for demo (replace with real dates from your API)
                 date: new Date(Date.now() - Math.floor(Math.random() * 10000000000)).toLocaleDateString('en-US', {
                   year: 'numeric', 
                   month: 'short', 
                   day: 'numeric'
                 }),
-                author: `Author ${post.author}` || `User ${post.userId}` // Or fetch real author names
+                author: `Author ${post.author}` || `User ${post.userId}` // Or fetch  author names
               })),
-          totalCount: Number(meta?.response?.headers.get('x-total-count')) || 80 // JSONPlaceholder has 100 total posts
+          totalCount: Number(meta?.response?.headers.get('x-total-count')) || 80 
         }),
         providesTags: ['Post'],
       }),
@@ -68,7 +67,7 @@ export const postsApi = createApi({
           postsApi.util.updateQueryData('getPosts', { page: 1, limit: 10 }, (draft) => {
             draft.posts.unshift({
               ...newPost,
-              id: Date.now(), // Temporary ID
+              id: Date.now(), 
             } as Post);
           })
         );
