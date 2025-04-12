@@ -1,36 +1,100 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Bloggle - A Blog Dashboard
 
-## Getting Started
+![Bloggle Screenshot](./public/screenshot.png)
 
-First, run the development server:
+## Table of Contents
+- [Features]
+- [Technologies]
+- [Installation]
+- [Development]
+- [ProjectStructure]
+- [APIEndpoints]
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+
+## Features
+
+**Modern UI** with Material-UI components  
+**Create, Read** blog posts with rich content  
+**Real-time updates** with RTK Query  
+**Fully responsive** design  
+**Reading time** estimates  
+**Post dates** and author information  
+**Pagination** for easy browsing  
+**Type-safe** with TypeScript  
+
+## Technologies
+
+### Frontend
+- Next.js 14 (App Router)
+- React 18
+- Material-UI (MUI v5)
+- Redux Toolkit (RTK Query)
+- TypeScript
+- react-hook-form
+
+### Build Tools & Quality
+- Vite
+- ESLint
+- Prettier
+- Husky (Git hooks)
+- Mock Service Worker (MSW) for API mocking in development
+- Faker.js for generating mock data
+
+## Installation
+
+1. **Clone the repository**:
+   ```bash
+   git clone https://github.com/yourusername/bloggle.git
+   cd bloggle
+   ```
+
+2. **Install dependencies**:
+   ```bash
+   npm install
+   # or
+   yarn install
+   ```
+
+3. **Run the development server**:
+   ```bash
+   npm run dev
+   # or
+   yarn dev
+   ```
+
+Open [http://localhost:3000](http://localhost:3000) in your browser to see the dashboard.
+
+## Development
+
+- Code style is enforced with **Prettier** and **ESLint**
+- Git hooks are configured using **Husky**
+- API mocking is handled using **MSW**
+
+## Project Structure
+
+```
+blog-dash/
+├── app/
+│   ├── [postId]/           # Dynamic post pages
+│   ├── add-post/           # New blog post page
+│   ├── posts/              # Posts listing
+│   ├── components/         # Reusable components
+│   ├── lib/                # API and state management
+│   ├── layout.tsx          # Root layout
+│   └── page.tsx            # Home page
+├── public/                 # Static assets
+├── types/                  # TypeScript types
+├── .eslintrc.json          # ESLint config
+├── .prettierrc             # Prettier config
+└── README.md               # This file
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## API Endpoints
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+All endpoints use **mockapi.io**, and data is generated using **faker.js**.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+| Endpoint        | Method | Description           |
+|----------------|--------|-----------------------|
+| `/posts`       | GET    | Get all posts         |
+| `/posts/:id`   | GET    | Get single post       |
+| `/add-post`    | POST   | Create new blog post  |

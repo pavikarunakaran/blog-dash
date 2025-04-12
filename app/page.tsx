@@ -1,103 +1,127 @@
-import Image from "next/image";
+'use client';
+import { Box, Button, Container, Typography, Stack } from '@mui/material';
+import Link from 'next/link';
+import { styled } from '@mui/material/styles';
+
+const HeroSection = styled(Box)(({ theme }) => ({
+  background: 'linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%)',
+  minHeight: '80vh',
+  display: 'flex',
+  alignItems: 'center',
+  padding: theme.spacing(4),
+  borderRadius: theme.shape.borderRadius,
+  boxShadow: theme.shadows[4],
+}));
+
+const FeatureCard = styled(Box)(({ theme }) => ({
+  backgroundColor: theme.palette.background.paper,
+  padding: theme.spacing(4),
+  borderRadius: theme.shape.borderRadius,
+  boxShadow: theme.shadows[2],
+  transition: 'transform 0.3s',
+  '&:hover': {
+    transform: 'translateY(-5px)',
+  },
+}));
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <Container maxWidth="lg">
+      <HeroSection>
+        <Box sx={{ maxWidth: 800, mx: 'auto', textAlign: 'center' }}>
+          <Typography 
+            variant="h2" 
+            gutterBottom 
+            sx={{ 
+              fontWeight: 800,
+              color: 'primary.main',
+              mb: 3
+            }}
+          >
+            Share Your Thoughts With The World
+          </Typography>
+          <Typography 
+            variant="h5" 
+            sx={{ 
+              mb: 4,
+              color: 'text.secondary'
+            }}
+          >
+            A beautiful space to express yourself and discover amazing stories
+          </Typography>
+          <Link href="/posts" passHref>
+            <Button 
+              variant="contained" 
+              size="large"
+              sx={{
+                px: 6,
+                py: 2,
+                fontSize: '1.1rem',
+                fontWeight: 600,
+                borderRadius: 50,
+                textTransform: 'none',
+                background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
+                boxShadow: '0 3px 5px 2px rgba(255, 105, 135, .3)',
+              }}
+            >
+              Start Reading
+            </Button>
+          </Link>
+        </Box>
+      </HeroSection>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
+      <Box sx={{ py: 8 }}>
+        <Typography 
+          variant="h3" 
+          align="center" 
+          sx={{ 
+            fontWeight: 700,
+            mb: 6,
+            color: 'text.primary'
+          }}
         >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
+          Why Choose Our Platform?
+        </Typography>
+        <Stack 
+          direction={{ xs: 'column', md: 'row' }} 
+          spacing={4}
+          justifyContent="center"
         >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+          {[
+            {
+              title: 'Beautiful Writing',
+              desc: 'Our editor makes writing a pleasure',
+              color: '#4A00E0'
+            },
+            {
+              title: 'Engage Readers',
+              desc: 'Connect with an active community',
+              color: '#8E2DE2'
+            },
+            {
+              title: 'Easy Sharing',
+              desc: 'Share your stories with one click',
+              color: '#00B4DB'
+            }
+          ].map((feature, index) => (
+            <FeatureCard key={index} sx={{ borderTop: `4px solid ${feature.color}` }}>
+              <Typography 
+                variant="h5" 
+                gutterBottom 
+                sx={{ 
+                  fontWeight: 600,
+                  color: feature.color
+                }}
+              >
+                {feature.title}
+              </Typography>
+              <Typography variant="body1">
+                {feature.desc}
+              </Typography>
+            </FeatureCard>
+          ))}
+        </Stack>
+      </Box>
+    </Container>
   );
 }
