@@ -1,5 +1,11 @@
 # Bloggle - A Blog Dashboard
 
+<img width="1419" alt="Screenshot 2025-04-12 at 4 07 44 PM" src="https://github.com/user-attachments/assets/b18dbcea-3900-4c24-b2c4-6e00db73724b" />
+
+<img width="1427" alt="Screenshot 2025-04-12 at 4 08 46 PM" src="https://github.com/user-attachments/assets/0f9ef74c-96be-4d02-a36b-82ada8f79de5" />
+
+
+
 ## Table of Contents
 - [Features]
 - [Technologies]
