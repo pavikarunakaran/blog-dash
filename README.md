@@ -129,3 +129,25 @@ All endpoints use **mockapi.io**, and data is generated using **faker.js**.
 | `/posts`       | GET    | Get all posts         |
 | `/posts/:id`   | GET    | Get single post       |
 | `/add-post`    | POST   | Create new blog post  |
+
+## Challenges Faced
+
+While I’ve always been more confident working on the backend, this project gave me a great opportunity to dive deeper into frontend development and refine my skills. I’ve worked with frontend frameworks before, but building a complete UI with Next.js 14, TypeScript, and Material-UI me a lot about building clean, intuitive UIs and structuring frontend code using modern tools.
+
+Initially, I started developing the blog dashboard using JSONPlaceholder just to get things rolling. It was great for quick prototyping, but I soon realized that it doesn’t persist new data or allow editing/deleting, which made the development experience limited and unrealistic for CRUD operations. So I decided to remodel the entire backend layer using MockAPI.io. That brought in more flexibility and helped me simulate a real-world API with full CRUD support and even relational data.
+
+Another interesting challenge I faced was around hydration errors in Next.js. It happened mainly due to mismatches between server-rendered content and client-side rendering, especially when working with dynamic content and Material-UI components. It was frustrating at first, but digging deeper into how SSR and CSR work together in Next.js taught me a lot about the rendering lifecycle. It was both challenging and exciting to debug and resolve these kinds of issues.
+
+Despite the learning curve, I actually enjoyed the process. I got to stretch my creative side with UI/UX and learned how to integrate frontend best practices into my development workflow.
+
+## Imporvements
+
+Potential improvements:
+
+1. Authentication – Implement login with OAuth or supabase for secuirty.
+
+2. Search & Filters – Add a search bar and tag-based filtering for blog search by name.
+
+3. Image Uploads – Support for uploading blog cover images via S3.
+
+4. Unit & Integration Tests – Right now I have added test case for only one file (api/posts.ts), need to add proper test coverage for other files as well.
