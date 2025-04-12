@@ -5,7 +5,6 @@ import { Post } from '../../types/post';
 import { CalendarToday, AccessTime } from '@mui/icons-material';
 
 export default function PostListItem({ post }: { post: Post }) {
-  // Create excerpt from body (first 100 chars)
   const excerpt = post.body.length > 100 
     ? `${post.body.substring(0, 100)}...` 
     : post.body;
