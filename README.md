@@ -68,6 +68,33 @@
 
 Open [http://localhost:3000](http://localhost:3000) in your browser to see the dashboard.
 
+
+## Mock API Setup (mockapi.io)
+
+This app uses mockapi.io for simulating backend APIs.
+
+To set it up:
+
+1. Go to https://mockapi.io and sign in with GitHub or Google.
+
+2. Click "Create New Project" – name it Bloggle or similar.
+
+3. Create a resource called posts with fields:
+    - title (string)
+
+    - content (text)
+
+    - author (string)
+
+    - createdAt (date)
+
+    - readingTime (number)
+
+4. Copy your Base URL from the top (e.g., https://yourproject.mockapi.io/api/v1).
+
+5. Update your frontend code to use this URL for API requests.
+   
+
 ## Development
 
 - Code style is enforced with **Prettier** and **ESLint**
